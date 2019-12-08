@@ -53,7 +53,7 @@ int main()
         // Read string from child, print it and close 
         // reading end. 
         read(fd2[0], result, 100); 
-        printf("result is : %s\n", result); 
+        printf("%s\n", result); 
         close(fd2[0]); 
     } 
   
@@ -64,26 +64,29 @@ int main()
         // Read a string using first pipe 
         char number[100]; 
         read(fd1[0], number, 100); 
-	int i=0, num=0;
+	int i=0, num=0, sum=0;
 	for(i=0; i<strlen(number); i++){
 		 if(number[i]>='0' && number[i]<='9') //to confirm it's a digit
    		 {
     			num = number[i] - '0';
 			if(num%2 == 0)     ///to check digit is an even number
 		 		sum += num;
-			printf("%d", num); ////TODO delete this line its just fr testing
+			//printf("%d", num); ////TODO delete this line its just fr testing
 			}
 
 	}
         // Concatenate a fixed string with it  
-        i=0; 
+        i=0;
+	int j=0; 
+	//for(; j<strlen(number); j++) number[j] = " ";
         for (i=0; i<strlen(fixed_str); i++) 
             number[i] = fixed_str[i]; 
         i = strlen(fixed_str);
-	number[++i] = sum;
+	number[++i] = sum + '0';
         // Close both reading ends 
         close(fd1[0]); 
         close(fd2[0]); 
+	//printf("sum of even number isssss : %d\n", sum);
         // Write concatenated string and close writing end 
         write(fd2[1], number, strlen(number)+1); 
         close(fd2[1]); 
