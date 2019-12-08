@@ -17,7 +17,7 @@ int main()
     char fixed_str[] = "The sum of even digits in the input number: "; 
     char input_str[100]; 
     pid_t p; 
-  
+
     if (pipe(fd1)==-1) 
     { 
         fprintf(stderr, "Pipe Failed" ); 
@@ -71,24 +71,59 @@ int main()
     			num = number[i] - '0';
 			if(num%2 == 0)     ///to check digit is an even number
 		 		sum += num;
-			//printf("%d", num); ////TODO delete this line its just fr testing
 			}
 
 	}
         // Concatenate a fixed string with it  
         i=0;
-	int j=0; 
-	//for(; j<strlen(number); j++) number[j] = " ";
+
         for (i=0; i<strlen(fixed_str); i++) 
             number[i] = fixed_str[i]; 
+
         i = strlen(fixed_str);
-	number[++i] = sum + '0';
+	int temp_sum = sum;
+	int counter=0; ///sum number of digits
+	while(temp_sum > 0){
+		temp_sum = temp_sum/10;
+		counter++;
+		
+	}
+	//printf("counter is : %d\n", counter);
+	temp_sum = sum;
+	char sums[counter];
+	char reverse[counter];
+	int length=0;
+	int rev=0;
+	while(temp_sum > 0){
+		int a = temp_sum%10;
+		reverse[length++] = a|'0';
+		temp_sum /= 10;
+		
+	}
+	int k=0;
+	/*for(k=0; k<length; k++)
+		printf("rev[i] is : %c\n", reverse[k]);*/
+	k=0;
+	length--;
+	while(length >= 0){
+		sums[rev++] = reverse[length--];
+		//printf("sum[i] is : %c\n", sums[k]);
+		k++;
+	}
+	
+	int j=0;
+	for(j=0; j<counter; j++){
+		number[i] = sums[j];
+		i++;
+
+	}
+	number[i]='\0';
         // Close both reading ends 
         close(fd1[0]); 
         close(fd2[0]); 
 	//printf("sum of even number isssss : %d\n", sum);
         // Write concatenated string and close writing end 
-        write(fd2[1], number, strlen(number)+1); 
+        write(fd2[1], number, strlen(number)); 
         close(fd2[1]); 
         exit(0); 
     } 
