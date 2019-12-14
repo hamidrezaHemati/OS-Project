@@ -76,6 +76,11 @@ sys_sleep(void)
   release(&tickslock);
   return 0;
 }
+int 
+sys_getyear(void)
+{
+return 2010;
+}
 
 // return how many clock tick interrupts have occurred
 // since start.

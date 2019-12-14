@@ -12,11 +12,11 @@
 00000000 .debug_loc
 00000000 .debug_ranges
 00000000 usertests.c
-00005e20 args.1402
+00005e20 args.1404
 00000000 ulib.c
 00000000 printf.c
 00003950 printint
-000054e8 digits.1038
+000054e8 digits.1040
 00000000 umalloc.c
 00005ea0 freep
 00005ea4 base
@@ -34,6 +34,7 @@
 00002b60 iref
 00003c50 malloc
 00003932 sleep
+00003942 getyear
 00000200 exitiputtest
 00003380 fsfull
 00001be0 bigdir
