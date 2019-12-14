@@ -532,3 +532,17 @@ procdump(void)
     cprintf("\n");
   }
 }
+/*
+int getppid(void){
+	return myproc() -> parent ->pid;
+}*/
+int getchildren(void){
+	return 1999;
+}
+
+
+
+
+
+
+

@@ -79,7 +79,14 @@ sys_sleep(void)
 int 
 sys_getyear(void)
 {
-return 2010;
+    return 2010;
+}
+int sys_getppid(void){
+
+    return sys_getppid();
+}
+int sys_getchildren(void){
+    return sys_getchildren();
 }
 
 // return how many clock tick interrupts have occurred
