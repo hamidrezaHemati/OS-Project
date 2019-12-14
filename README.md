@@ -2,6 +2,6 @@
 2019 fall semester OS Project
 
 
-Question 1 [Link](q1/readMe)
+Question 1 [Link](https://github.com/hamidrezaHemati/OS-Project/tree/master/q1)
 
-Question 2 [Link](q2/README)
+Question 2 [Link](https://github.com/hamidrezaHemati/OS-Project/tree/master/q2)
