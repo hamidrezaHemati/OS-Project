@@ -532,12 +532,20 @@ procdump(void)
     cprintf("\n");
   }
 }
-/*
+
 int getppid(void){
 	return myproc() -> parent ->pid;
-}*/
+}
 int getchildren(void){
-	return 1999;
+    struct proc *p;
+    int result=0;
+    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+        if(p->parent->pid == myproc()->pid){
+            result *= 100;
+            result += p->pid;
+        }
+    }
+    return result;
 }
 
 

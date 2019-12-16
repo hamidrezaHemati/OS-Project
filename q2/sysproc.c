@@ -82,11 +82,10 @@ sys_getyear(void)
     return 2010;
 }
 int sys_getppid(void){
-
-    return sys_getppid();
+  	return myproc() -> parent ->pid;
 }
 int sys_getchildren(void){
-    return sys_getchildren();
+   return getchildren();
 }
 
 // return how many clock tick interrupts have occurred
