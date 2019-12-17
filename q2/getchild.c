@@ -14,21 +14,9 @@ if(pid1 < 0)
 if(pid2 < 0)
     printf(1, "second fork didnt work \n");
 printf(1, "%d \t %d\n", getpid(), getppid());
-
 if(getpid() == parent){
     printf(1, "checking orginal parent id is %d\n", parent);
     printf(1, "children = %d\n", getchildren());
 }
-/*
-if(pid1>0){
-    printf(1, "children = %d\n", getchildren());
-    //printf(1, "children = %d\n", getchildren());
-    wait();
-}
-if(pid2>0){
-    printf(1, "children = %d\n", getchildren());
-    //printf(1, "children = %d\n", getchildren());
-    wait();
- }*/
 exit();
 }

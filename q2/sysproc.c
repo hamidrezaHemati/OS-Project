@@ -87,6 +87,11 @@ int sys_getppid(void){
 int sys_getchildren(void){
    return getchildren();
 }
+int sys_getcount(void){
+    int pid;
+    argint(0, &pid);
+    return getcount(pid);
+}
 
 // return how many clock tick interrupts have occurred
 // since start.

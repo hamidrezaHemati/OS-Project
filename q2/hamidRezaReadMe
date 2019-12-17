@@ -1,0 +1,33 @@
+hello
+this is a short explenation about this part of Opration System Project.
+this is about how to add a system call in xv6 os.  
+if you dont know what exactly a system call is you should go and read about it
+if you dont do that you probably face some dificulties.
+as you can see in xv6 directory there is so many files like syscall.h , syscall.c , defs.h and etc.
+you should change and modified some files in order to add system calls in xv6 OS.
+those files are:
+syscall.h
+syscall.c
+sysproc.c
+usys.S
+user.h
+
+first you must change syscall.h
+this file contains the list of system calls in xv6 os
+the number that is in front of each system call is the ID of that specefic system call.
+for example you want to add a getchildren system call in xv6
+when you open this syscall.h file you see some #defines
+if it is the first time you opeen this file you will see 21 syscalls that ends with
+#define SYS_close 21
+so we can undrestand some fact from this file
+1) there is 21 orginal system call in xv6
+2) if you want to add a system call in this OS first define your system call on this file like blow:
+#define SYS_getchildren [ID of your system call]
+#define SYS_getchildren 22
+
+next yu must modified syscall.c file
+first add the prototype of your system call
+extern int sys_getchildren(void)
+then add the system call in syscall structure
+[SYS_getchildren] sys_getchildren,
+

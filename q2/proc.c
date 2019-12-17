@@ -86,6 +86,9 @@ allocproc(void)
   return 0;
 
 found:
+  for(int i=0; i<25; i++){ 
+      p->hit[i] = 0;
+  }
   p->state = EMBRYO;
   p->pid = nextpid++;
 
@@ -547,7 +550,9 @@ int getchildren(void){
     }
     return result;
 }
-
+int getcount(int input){
+   return myproc()->hit[input];
+}
 
 
 
