@@ -1,0 +1,76 @@
+for adding getcoutn system call:
+this system call has an input.
+1) syscal.h
+#define SYS_getcount 25
+
+2)user.h
+int getcount(int);
+
+3)syscall.c we add two change in this file for start
+	3.1) extern int sys_getcount(void);
+
+	3.2) and in -> [ static int (*syscalls[])(void) ] 
+	add : [SYS_getcount] sys_getcount,
+ 
+4) usys.S
+SYSCALL(getcount)
+
+5)sysproc.c
+int sys_getcount(void){
+    int pid;
+    argint(0, &pid);
+    return getcount(pid);
+}
+
+6)defs.h
+int getcount(int);
+
+7) proc.h
+in proc.h we have to add an attribute to proccess structure 
+we want to know that how many time each proccess invoke each system call
+so we must to add an array with the size of the number of system calls
+i have 25 syscalls so :
+struct proc{
+int invoke[25];
+..
+..
+..
+..
+}
+
+8)syscall.c
+in syscall method we must to modifie this method as below:
+void
+syscall(void)
+{
+  int num;
+  struct proc *curproc = myproc();
+
+  num = curproc->tf->eax;
+  if(num > 0 && num < NELEM(syscalls) && syscalls[num]) {
+    curproc->tf->eax = syscalls[num]();
+    myproc()->hit[num]++;
+  } else {
+    cprintf("%d %s: unknown sys call %d\n",
+            curproc->pid, curproc->name, num);
+    curproc->tf->eax = -1;
+  }
+}
+
+
+9) proc.c we should add two change like below
+9.1)in the end of this file add getcount method like this:
+	int getcount(int input){
+   	return myproc()->hit[input];
+	}
+9.2)in allocproc 
+below the found:
+for(int i=0; i<25; i++){ 
+      p->hit[i] = 0;
+  }
+
+then add a test file to see how its work:
+for example call a systemcall like pid()
+then use getcount and give this systemcall id as input then see the reslult
+
+
