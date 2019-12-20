@@ -1992,10 +1992,12 @@ SYSCALL(changePolicy)
      dda:	b8 1b 00 00 00       	mov    $0x1b,%eax
      ddf:	cd 40                	int    $0x40
      de1:	c3                   	ret    
-     de2:	66 90                	xchg   %ax,%ax
-     de4:	66 90                	xchg   %ax,%ax
-     de6:	66 90                	xchg   %ax,%ax
-     de8:	66 90                	xchg   %ax,%ax
+
+00000de2 <waitForChild>:
+SYSCALL(waitForChild)
+     de2:	b8 1c 00 00 00       	mov    $0x1c,%eax
+     de7:	cd 40                	int    $0x40
+     de9:	c3                   	ret    
      dea:	66 90                	xchg   %ax,%ax
      dec:	66 90                	xchg   %ax,%ax
      dee:	66 90                	xchg   %ax,%ax

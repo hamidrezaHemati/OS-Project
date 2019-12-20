@@ -36,6 +36,11 @@ enum procstate { UNUSED, EMBRYO, SLEEPING, RUNNABLE, RUNNING, ZOMBIE };
 
 // Per-process state
 struct proc {
+  int creationTime;
+  int terminationTime;
+  int sleepingTime;
+  int readyTime;
+  int runningTime;
   int priority;                //                                       author: hamidreza
   long long int calculatedPriority; ///                                 author: hamidreza 
   int hit[27];                 // array of systemcalls                  author: hamidreza
@@ -52,6 +57,14 @@ struct proc {
   struct file *ofile[NOFILE];  // Open files
   struct inode *cwd;           // Current directory
   char name[16];               // Process name (debugging)
+};
+
+struct timeVariables{
+  int creationTime;
+  int terminationTime;
+  int sleepingTime;
+  int readyTime;
+  int runningTime;
 };
 
 // Process memory is laid out contiguously, low addresses first:

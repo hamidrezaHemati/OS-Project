@@ -652,10 +652,12 @@ SYSCALL(changePolicy)
  3da:	b8 1b 00 00 00       	mov    $0x1b,%eax
  3df:	cd 40                	int    $0x40
  3e1:	c3                   	ret    
- 3e2:	66 90                	xchg   %ax,%ax
- 3e4:	66 90                	xchg   %ax,%ax
- 3e6:	66 90                	xchg   %ax,%ax
- 3e8:	66 90                	xchg   %ax,%ax
+
+000003e2 <waitForChild>:
+SYSCALL(waitForChild)
+ 3e2:	b8 1c 00 00 00       	mov    $0x1c,%eax
+ 3e7:	cd 40                	int    $0x40
+ 3e9:	c3                   	ret    
  3ea:	66 90                	xchg   %ax,%ax
  3ec:	66 90                	xchg   %ax,%ax
  3ee:	66 90                	xchg   %ax,%ax

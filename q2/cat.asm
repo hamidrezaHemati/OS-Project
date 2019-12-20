@@ -698,10 +698,12 @@ SYSCALL(changePolicy)
  42a:	b8 1b 00 00 00       	mov    $0x1b,%eax
  42f:	cd 40                	int    $0x40
  431:	c3                   	ret    
- 432:	66 90                	xchg   %ax,%ax
- 434:	66 90                	xchg   %ax,%ax
- 436:	66 90                	xchg   %ax,%ax
- 438:	66 90                	xchg   %ax,%ax
+
+00000432 <waitForChild>:
+SYSCALL(waitForChild)
+ 432:	b8 1c 00 00 00       	mov    $0x1c,%eax
+ 437:	cd 40                	int    $0x40
+ 439:	c3                   	ret    
  43a:	66 90                	xchg   %ax,%ax
  43c:	66 90                	xchg   %ax,%ax
  43e:	66 90                	xchg   %ax,%ax

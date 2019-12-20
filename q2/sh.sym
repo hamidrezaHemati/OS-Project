@@ -12,11 +12,11 @@
 00000000 .debug_loc
 00000000 .debug_ranges
 00000000 sh.c
-000018c0 buf.1088
+000018c0 buf.1091
 00000000 ulib.c
 00000000 printf.c
 00000df0 printint
-000012d8 digits.1050
+000012d8 digits.1053
 00000000 umalloc.c
 00001924 freep
 00001928 base
@@ -66,6 +66,7 @@
 00000dba getppid
 00000dca getcount
 00000af0 strcmp
+00000de2 waitForChild
 00000d8a dup
 000003b0 pipecmd
 00000360 redircmd

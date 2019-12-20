@@ -11,11 +11,11 @@
 00000000 .debug_loc
 00000000 .debug_ranges
 00000000 ls.c
-00000dcc buf.1061
+00000dcc buf.1064
 00000000 ulib.c
 00000000 printf.c
 00000660 printint
-00000aac digits.1050
+00000aac digits.1053
 00000000 umalloc.c
 00000ddc freep
 00000de0 base
@@ -49,6 +49,7 @@
 0000062a getppid
 0000063a getcount
 00000360 strcmp
+00000652 waitForChild
 000005fa dup
 00000632 getchildren
 000004c0 stat

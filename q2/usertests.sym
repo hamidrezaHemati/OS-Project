@@ -12,11 +12,11 @@
 00000000 .debug_loc
 00000000 .debug_ranges
 00000000 usertests.c
-00005e40 args.1414
+00005e40 args.1417
 00000000 ulib.c
 00000000 printf.c
 00003980 printint
-00005518 digits.1050
+00005518 digits.1053
 00000000 umalloc.c
 00005ec0 freep
 00005ec4 base
@@ -76,6 +76,7 @@
 0000394a getppid
 0000395a getcount
 00003680 strcmp
+00003972 waitForChild
 00000480 writetest
 0000391a dup
 00002d30 sbrktest

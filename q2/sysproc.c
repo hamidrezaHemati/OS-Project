@@ -102,6 +102,12 @@ int sys_changePolicy(void){
     argint(0, &policy);
     return changePolicy(policy);
 }
+int sys_waitForChild(void){
+    struct timeVariables *tv;
+    argptr(0, (void*)&tv, sizeof(*tv));
+    return waitForChild(tv);
+    
+}
 
 // return how many clock tick interrupts have occurred
 // since start.

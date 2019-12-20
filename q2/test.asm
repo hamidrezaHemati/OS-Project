@@ -583,10 +583,12 @@ SYSCALL(changePolicy)
  34a:	b8 1b 00 00 00       	mov    $0x1b,%eax
  34f:	cd 40                	int    $0x40
  351:	c3                   	ret    
- 352:	66 90                	xchg   %ax,%ax
- 354:	66 90                	xchg   %ax,%ax
- 356:	66 90                	xchg   %ax,%ax
- 358:	66 90                	xchg   %ax,%ax
+
+00000352 <waitForChild>:
+SYSCALL(waitForChild)
+ 352:	b8 1c 00 00 00       	mov    $0x1c,%eax
+ 357:	cd 40                	int    $0x40
+ 359:	c3                   	ret    
  35a:	66 90                	xchg   %ax,%ax
  35c:	66 90                	xchg   %ax,%ax
  35e:	66 90                	xchg   %ax,%ax

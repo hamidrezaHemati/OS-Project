@@ -14,7 +14,7 @@
 00000000 ulib.c
 00000000 printf.c
 000003c0 printint
-000007fc digits.1050
+000007fc digits.1053
 00000000 umalloc.c
 00000ac0 freep
 00000ac4 base
@@ -47,6 +47,7 @@
 0000038a getppid
 0000039a getcount
 000000c0 strcmp
+000003b2 waitForChild
 0000035a dup
 00000392 getchildren
 00000220 stat
