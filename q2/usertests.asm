@@ -6077,10 +6077,12 @@ SYSCALL(getcount)
     395a:	b8 19 00 00 00       	mov    $0x19,%eax
     395f:	cd 40                	int    $0x40
     3961:	c3                   	ret    
-    3962:	66 90                	xchg   %ax,%ax
-    3964:	66 90                	xchg   %ax,%ax
-    3966:	66 90                	xchg   %ax,%ax
-    3968:	66 90                	xchg   %ax,%ax
+
+00003962 <changePriority>:
+SYSCALL(changePriority)
+    3962:	b8 1a 00 00 00       	mov    $0x1a,%eax
+    3967:	cd 40                	int    $0x40
+    3969:	c3                   	ret    
     396a:	66 90                	xchg   %ax,%ax
     396c:	66 90                	xchg   %ax,%ax
     396e:	66 90                	xchg   %ax,%ax

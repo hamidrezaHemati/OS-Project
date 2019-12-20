@@ -578,10 +578,13 @@ int getcount(int input){
    return myproc()->hit[input];
 }
 
-
-
-
-
+int changePriority(int priority){
+  if(priority >=1 && priority <=5){
+    myproc()->priority = priority;
+    return 1;
+  }
+  return -1;
+}
 
 
 /*

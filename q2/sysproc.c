@@ -92,6 +92,11 @@ int sys_getcount(void){
     argint(0, &pid);
     return getcount(pid);
 }
+int sys_changePriority(void){
+    int priority;
+    argint(0, &priority);
+    return changePriority(priority);
+}
 
 // return how many clock tick interrupts have occurred
 // since start.

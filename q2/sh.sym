@@ -12,11 +12,11 @@
 00000000 .debug_loc
 00000000 .debug_ranges
 00000000 sh.c
-000018a0 buf.1084
+000018a0 buf.1086
 00000000 ulib.c
 00000000 printf.c
 00000de0 printint
-000012c8 digits.1046
+000012c8 digits.1048
 00000000 umalloc.c
 00001904 freep
 00001908 base
@@ -58,6 +58,7 @@
 00000d0a fork
 00000d9a sbrk
 00000daa uptime
+00000dd2 changePriority
 00001892 __bss_start
 00000b70 memset
 00000000 main

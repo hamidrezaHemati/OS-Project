@@ -24,3 +24,4 @@
 #define SYS_getppid 23
 #define SYS_getchildren 24
 #define SYS_getcount 25
+#define SYS_changePriority 26

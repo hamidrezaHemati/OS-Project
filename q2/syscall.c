@@ -107,6 +107,7 @@ extern int sys_getyear(void);
 extern int sys_getppid(void);
 extern int sys_getchildren(void);
 extern int sys_getcount(void);
+extern int sys_changePriority(void);
 
 static int (*syscalls[])(void) = {
 [SYS_fork]    sys_fork,
@@ -134,6 +135,7 @@ static int (*syscalls[])(void) = {
 [SYS_getppid]  sys_getppid,
 [SYS_getchildren]  sys_getchildren,
 [SYS_getcount] sys_getcount,
+[SYS_changePriority] sys_changePriority,
 };
 
 

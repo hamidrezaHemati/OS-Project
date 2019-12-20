@@ -14,7 +14,7 @@
 00000000 ulib.c
 00000000 printf.c
 00000460 printint
-00000884 digits.1046
+00000884 digits.1048
 00000000 umalloc.c
 00000b34 freep
 00000b38 base
@@ -39,6 +39,7 @@
 0000038a fork
 0000041a sbrk
 0000042a uptime
+00000452 changePriority
 00000b34 __bss_start
 000001f0 memset
 00000000 main

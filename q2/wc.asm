@@ -738,10 +738,12 @@ SYSCALL(getcount)
  48a:	b8 19 00 00 00       	mov    $0x19,%eax
  48f:	cd 40                	int    $0x40
  491:	c3                   	ret    
- 492:	66 90                	xchg   %ax,%ax
- 494:	66 90                	xchg   %ax,%ax
- 496:	66 90                	xchg   %ax,%ax
- 498:	66 90                	xchg   %ax,%ax
+
+00000492 <changePriority>:
+SYSCALL(changePriority)
+ 492:	b8 1a 00 00 00       	mov    $0x1a,%eax
+ 497:	cd 40                	int    $0x40
+ 499:	c3                   	ret    
  49a:	66 90                	xchg   %ax,%ax
  49c:	66 90                	xchg   %ax,%ax
  49e:	66 90                	xchg   %ax,%ax

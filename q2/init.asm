@@ -660,10 +660,12 @@ SYSCALL(getcount)
  3fa:	b8 19 00 00 00       	mov    $0x19,%eax
  3ff:	cd 40                	int    $0x40
  401:	c3                   	ret    
- 402:	66 90                	xchg   %ax,%ax
- 404:	66 90                	xchg   %ax,%ax
- 406:	66 90                	xchg   %ax,%ax
- 408:	66 90                	xchg   %ax,%ax
+
+00000402 <changePriority>:
+SYSCALL(changePriority)
+ 402:	b8 1a 00 00 00       	mov    $0x1a,%eax
+ 407:	cd 40                	int    $0x40
+ 409:	c3                   	ret    
  40a:	66 90                	xchg   %ax,%ax
  40c:	66 90                	xchg   %ax,%ax
  40e:	66 90                	xchg   %ax,%ax

@@ -27,6 +27,7 @@ int getyear(void);
 int getppid(void);
 int getchildren(void);
 int getcount(int);
+int changePriority(int);
 
 // ulib.c
 int stat(const char*, struct stat*);

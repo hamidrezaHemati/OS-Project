@@ -12,11 +12,11 @@
 00000000 .debug_loc
 00000000 .debug_ranges
 00000000 usertests.c
-00005e40 args.1410
+00005e40 args.1412
 00000000 ulib.c
 00000000 printf.c
 00003970 printint
-00005508 digits.1046
+00005508 digits.1048
 00000000 umalloc.c
 00005ec0 freep
 00005ec4 base
@@ -66,6 +66,7 @@
 0000389a fork
 0000392a sbrk
 0000393a uptime
+00003962 changePriority
 00005e30 __bss_start
 00003700 memset
 00000830 createtest

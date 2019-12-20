@@ -1980,10 +1980,12 @@ SYSCALL(getcount)
      dca:	b8 19 00 00 00       	mov    $0x19,%eax
      dcf:	cd 40                	int    $0x40
      dd1:	c3                   	ret    
-     dd2:	66 90                	xchg   %ax,%ax
-     dd4:	66 90                	xchg   %ax,%ax
-     dd6:	66 90                	xchg   %ax,%ax
-     dd8:	66 90                	xchg   %ax,%ax
+
+00000dd2 <changePriority>:
+SYSCALL(changePriority)
+     dd2:	b8 1a 00 00 00       	mov    $0x1a,%eax
+     dd7:	cd 40                	int    $0x40
+     dd9:	c3                   	ret    
      dda:	66 90                	xchg   %ax,%ax
      ddc:	66 90                	xchg   %ax,%ax
      dde:	66 90                	xchg   %ax,%ax
