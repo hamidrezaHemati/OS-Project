@@ -36,6 +36,8 @@ enum procstate { UNUSED, EMBRYO, SLEEPING, RUNNABLE, RUNNING, ZOMBIE };
 
 // Per-process state
 struct proc {
+  int priority;                //                                       author: hamidreza
+  long long int calculatedPriority; ///                                 author: hamidreza 
   int hit[25];                 // array of systemcalls                  author: hamidreza
   uint sz;                     // Size of process memory (bytes)
   pde_t* pgdir;                // Page table
