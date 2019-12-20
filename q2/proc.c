@@ -74,6 +74,8 @@ static struct proc*
 allocproc(void)
 {
   struct proc *p;
+  struct proc *p1;           ///////this proccess structure designed for finding the lowest calculatedPriority
+ 
   char *sp;
 
   acquire(&ptable.lock);
@@ -86,9 +88,26 @@ allocproc(void)
   return 0;
 
 found:
-  for(int i=0; i<25; i++){ 
+  for(int i=0; i<26; i++){ 
       p->hit[i] = 0;
   }
+  p->priority = 5;
+  int minCP = __INT32_MAX__;                                ////maximum int value 
+  int proccessExistFlag = 0;
+  for(p1 = ptable.proc; p1 < &ptable.proc[NPROC]; p1++){
+      if(p1->state != RUNNABLE || p1->pid == p->pid){
+        continue;
+      }
+      if(p1->calculatedPriority < minCP){
+          minCP = p1->calculatedPriority;
+          proccessExistFlag = 1;
+      }
+  }
+  if(proccessExistFlag)
+    p->calculatedPriority = minCP;
+  else
+    p->calculatedPriority = 0;
+  
   p->state = EMBRYO;
   p->pid = nextpid++;
 
