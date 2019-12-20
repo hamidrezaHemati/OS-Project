@@ -25,3 +25,4 @@
 #define SYS_getchildren 24
 #define SYS_getcount 25
 #define SYS_changePriority 26
+#define SYS_changePolicy 27

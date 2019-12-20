@@ -38,7 +38,7 @@ enum procstate { UNUSED, EMBRYO, SLEEPING, RUNNABLE, RUNNING, ZOMBIE };
 struct proc {
   int priority;                //                                       author: hamidreza
   long long int calculatedPriority; ///                                 author: hamidreza 
-  int hit[26];                 // array of systemcalls                  author: hamidreza
+  int hit[27];                 // array of systemcalls                  author: hamidreza
   uint sz;                     // Size of process memory (bytes)
   pde_t* pgdir;                // Page table
   char *kstack;                // Bottom of kernel stack for this process

@@ -97,6 +97,11 @@ int sys_changePriority(void){
     argint(0, &priority);
     return changePriority(priority);
 }
+int sys_changePolicy(void){
+    int policy;
+    argint(0, &policy);
+    return changePolicy(policy);
+}
 
 // return how many clock tick interrupts have occurred
 // since start.

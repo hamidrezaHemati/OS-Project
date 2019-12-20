@@ -124,6 +124,9 @@ int             getppid(void);
 int             getchildren(void);
 int             getcount(int);
 int             changePriority(int);
+int             changePolicy(int);
+int             getPolicy(void);
+
 
 // swtch.S
 void            swtch(struct context**, struct context*);

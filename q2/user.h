@@ -28,6 +28,8 @@ int getppid(void);
 int getchildren(void);
 int getcount(int);
 int changePriority(int);
+int changePolicy(int);
+
 
 // ulib.c
 int stat(const char*, struct stat*);
