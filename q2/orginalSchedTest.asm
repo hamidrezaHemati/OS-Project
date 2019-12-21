@@ -20,6 +20,7 @@ int main(void){
    e:	56                   	push   %esi
    f:	53                   	push   %ebx
   10:	51                   	push   %ecx
+   //changePolicy(1);
    int p=getpid();
    struct timeVariables tv = {0,0,0,0,0};
   11:	bb 0a 00 00 00       	mov    $0xa,%ebx
@@ -82,7 +83,7 @@ int main(void){
   8d:	74 05                	je     94 <main+0x94>
         printf(1, "turn around time avarage %d\n", turnAroundTimeAvg);
         printf(1, "cbt avarage %d\n", watingTimeAvg);
-        printf(1, "wating time avarage %d\n", cbtAvg);
+        printf(1, "wating time avarage %d\n", cbtSum/10);
         exit();
    }
    exit();
@@ -148,17 +149,17 @@ int main(void){
         printf(1, " -------------avg starts--------------- ");
  11a:	50                   	push   %eax
  11b:	50                   	push   %eax
-       int turnAroundTimeAvg = turnAroundTimeSum/10;
+        int turnAroundTimeAvg = turnAroundTimeSum/10;
  11c:	bb 0a 00 00 00       	mov    $0xa,%ebx
         printf(1, " -------------avg starts--------------- ");
  121:	68 6c 09 00 00       	push   $0x96c
  126:	6a 01                	push   $0x1
  128:	e8 23 04 00 00       	call   550 <printf>
-       int turnAroundTimeAvg = turnAroundTimeSum/10;
+        int turnAroundTimeAvg = turnAroundTimeSum/10;
  12d:	8b 45 c4             	mov    -0x3c(%ebp),%eax
         printf(1, "turn around time avarage %d\n", turnAroundTimeAvg);
  130:	83 c4 0c             	add    $0xc,%esp
-       int turnAroundTimeAvg = turnAroundTimeSum/10;
+        int turnAroundTimeAvg = turnAroundTimeSum/10;
  133:	99                   	cltd   
  134:	f7 fb                	idiv   %ebx
         printf(1, "turn around time avarage %d\n", turnAroundTimeAvg);
@@ -178,14 +179,11 @@ int main(void){
  14d:	68 cf 08 00 00       	push   $0x8cf
  152:	6a 01                	push   $0x1
  154:	e8 f7 03 00 00       	call   550 <printf>
-        int cbtAvg = cbtSum/10;
+        printf(1, "wating time avarage %d\n", cbtSum/10);
  159:	8b 45 bc             	mov    -0x44(%ebp),%eax
-        printf(1, "wating time avarage %d\n", cbtAvg);
  15c:	83 c4 0c             	add    $0xc,%esp
-        int cbtAvg = cbtSum/10;
  15f:	99                   	cltd   
  160:	f7 fb                	idiv   %ebx
-        printf(1, "wating time avarage %d\n", cbtAvg);
  162:	50                   	push   %eax
  163:	68 df 08 00 00       	push   $0x8df
  168:	6a 01                	push   $0x1

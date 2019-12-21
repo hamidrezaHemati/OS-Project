@@ -13,6 +13,7 @@ struct timeVariables{
 
 
 int main(void){
+   //changePolicy(1);
    int p=getpid();
    struct timeVariables tv = {0,0,0,0,0};
    struct timeVariables *tv1 = &tv;
@@ -46,13 +47,13 @@ int main(void){
            printf(1, "wating time of %d th proccess is %d\n",id, watingTime);
            
        }
-       int turnAroundTimeAvg = turnAroundTimeSum/10;
+        int turnAroundTimeAvg = turnAroundTimeSum/10;
         int watingTimeAvg = watingTimeSum/10;
-        int cbtAvg = cbtSum/10;
+        //int cbtAvg = cbtSum/10;
         printf(1, " -------------avg starts--------------- ");
         printf(1, "turn around time avarage %d\n", turnAroundTimeAvg);
         printf(1, "cbt avarage %d\n", watingTimeAvg);
-        printf(1, "wating time avarage %d\n", cbtAvg);
+        printf(1, "wating time avarage %d\n", cbtSum/10);
         exit();
    }
    exit();
