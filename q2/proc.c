@@ -647,6 +647,7 @@ void timerUpdate(){
       {
       case RUNNING:
         p->runningTime++;
+        p->readyTime++;
         break;
       case SLEEPING:
         p->sleepingTime++;
